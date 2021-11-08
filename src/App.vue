@@ -10,7 +10,7 @@
   </nav>
 </header>
   <main>
-    <RobotBuilder />
+    <RobotBuilder /> // * Local component used like HTML element
   </main>
 </template>
 
