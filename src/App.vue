@@ -10,7 +10,7 @@
   </nav>
 </header>
   <main>
-    <RobotBuilder /> // * Local component used like HTML element
+    <RobotBuilder />
   </main>
 </template>
 
@@ -34,6 +34,9 @@ body {
   background: linear-gradient(to bottom, #555, #999);
   background-attachment: fixed;
 }
+</style>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
