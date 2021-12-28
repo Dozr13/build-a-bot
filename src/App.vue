@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// import HomePage from './home/HomePage.vue'; // * Local component importing to Vue App
+// import HomePage from './home/HomePage.vue';
 import RobotBuilder from './build/RobotBuilder.vue';
 
 export default {
