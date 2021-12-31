@@ -4,14 +4,14 @@
       <img class='robot' src="../assets/robot-home.png" aria-hidden='true' />
     </div>
     <div class="get-started">
-      <a href=''>Get started</a> building your first robot!
+      <router-link to='/build'>Get started</router-link> building your first robot!
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'HomePage',
   props: {
     msg: String,
   },
@@ -25,5 +25,8 @@ export default {
 }
 .robot {
   height: 300px;
+}
+.get-started {
+  font-size: 2rem;
 }
 </style>

@@ -1,31 +1,34 @@
 <template>
-<header>
-  <nav>
-    <ul>
-      <li class='nav-item'>
-        <img class='logo' src="./assets/build-a-bot-logo.png" />
-        Build-a-Bot
-      </li>
-    </ul>
-  </nav>
-</header>
-  <main>
-    <RobotBuilder />
-  </main>
+  <header>
+    <nav>
+      <ul>
+        <li class='nav-item'>
+          <router-link class="nav-link" :to="{name: 'Home'}" exact>
+            <img class='logo' src="./assets/build-a-bot-logo.png" />
+            Build-a-Bot
+          </router-link>
+        </li>
+        <li class='nav-item' :to="{name: 'Build'}" exact>
+          <router-link class="nav-link" :to="{name: 'Build'}">
+            Build
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <aside class="aside">
+      <router-view name="sidebar" />
+    </aside>
+    <main>
+      <router-view/>
+    </main>
+  </div>
 </template>
 
 <script>
-// import HomePage from './home/HomePage.vue';
-import RobotBuilder from './build/RobotBuilder.vue';
-
 export default {
   name: 'App',
-  components: {
-  // * Local component registry; we're required to register components like this because
-  // * this component is not registered globally
-  // * need to register local components within the components where you use them like so:
-    RobotBuilder,
-  },
 };
 </script>
 
@@ -41,15 +44,14 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 main {
-  margin: 0 auto;
   padding: 30px;
   background-color: #fff;
-  width: 1024px;
+  width: 964px;
   min-height: 300px;
 }
 header {
   background-color: #999;
-  width: 1084px;
+  width: 1184px;
   margin: 0 auto;
 }
 ul {
@@ -66,5 +68,24 @@ ul {
   height: 30px;
   vertical-align: middle;
   cursor: pointer;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2.5rem;
+}
+.router-link-active {
+  color: #fff
+}
+.container {
+  display: flex;
+  margin: 10px auto 0 auto;
+  justify-content: center;
+}
+.aside {
+  padding: 30px;
+  background-color: #aaa;
+  width: 100px;
+  min-height: 300px;
 }
 </style>

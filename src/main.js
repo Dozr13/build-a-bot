@@ -1,8 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
+import store from './store';
 // import HomePage from './components/HomePage.vue'; // * need to import component to make it global
 
-createApp(App).mount('#app'); // * returns newly created vue app
+createApp(App)
+  .use(router)
+  .use(store)
+  .mount('#app'); // * returns newly created vue app
 
 //  * example of registering a component a global component
 //  * Global variables should be avoided as it increases bundle size
