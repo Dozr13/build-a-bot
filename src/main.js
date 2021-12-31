@@ -2,11 +2,18 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-// import HomePage from './components/HomePage.vue'; // * need to import component to make it global
+import pinDirective from './shared/pin-directive';
+import currencyFilter from './shared/currency-filter';
 
-createApp(App)
-  .use(router)
+const app = createApp(App);
+
+app.config.globalProperties.$filters = {
+  currency: currencyFilter,
+};
+
+app.use(router)
   .use(store)
+  .directive('pin', pinDirective)
   .mount('#app'); // * returns newly created vue app
 
 //  * example of registering a component a global component
